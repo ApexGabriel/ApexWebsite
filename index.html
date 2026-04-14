@@ -17,27 +17,6 @@ body{
   color:#c8c8c8;
   font-family:'DM Sans',sans-serif;
   overflow-x:hidden;
-  cursor:none;
-}
-
-/* ── Custom cursor ── */
-#cursor{
-  position:fixed;width:6px;height:6px;
-  background:#e8a020;border-radius:50%;
-  pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%);
-  transition:transform .1s,opacity .2s;
-}
-#cursor-ring{
-  position:fixed;width:28px;height:28px;
-  border:1px solid rgba(232,160,32,.3);border-radius:50%;
-  pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);
-  transition:transform .18s ease,width .2s,height .2s,border-color .2s;
-}
-body:has(a:hover) #cursor-ring,
-body:has(button:hover) #cursor-ring{
-  width:44px;height:44px;border-color:rgba(232,160,32,.6);
 }
 
 /* ── Variables ── */
@@ -212,7 +191,7 @@ section{position:relative;z-index:1;}
 }
 .section-body{font-size:15px;line-height:1.85;color:#585858;max-width:600px;}
 
-/* ── What I Do ── */
+/* ── What We Do ── */
 #services{padding:120px 0;}
 .services-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:1px;
@@ -401,8 +380,6 @@ footer{
 </head>
 <body>
 
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
 <div class="scanline"></div>
 
 <!-- Nav -->
@@ -497,7 +474,7 @@ footer{
   <div class="section-inner">
     <div class="reveal">
       <div class="section-label">Capabilities</div>
-      <h2 class="section-title">What I Bring<br/>to Your Production</h2>
+      <h2 class="section-title">What We Bring<br/>to Your Production</h2>
       <p class="section-body">Embedded consulting built around the specific challenges of shipping real-time games in UE5 — not generic advice, but hands-on pipeline work.</p>
     </div>
 
@@ -588,7 +565,7 @@ footer{
   </div>
 </section>
 
-<!-- Who I Work With -->
+<!-- Who We Work With -->
 <section id="studio-types">
   <div class="section-inner">
     <div class="types-layout">
@@ -703,8 +680,7 @@ footer{
           If you're building a game in UE5 and lighting or technical art is something you're figuring out as you go — that's exactly where this is useful. Reach out and tell me what you're working on.
         </p>
         <p class="contact-note">
-          I work with a small number of studios at a time so I can be genuinely useful to each one. If the timing and fit are right, we'll figure out what makes sense.
-        </p>
+          We work with a small number of studios at a time so we can be genuinely useful to each one. If the timing and fit are right, we'll figure out what makes sense.
 
         <div class="contact-detail">
           <span class="cd-label">Email</span>
@@ -767,13 +743,6 @@ footer{
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── Custom cursor ──────────────────────────────────────
-const cursor = document.getElementById("cursor");
-const ring = document.getElementById("cursor-ring");
-let mx=0, my=0, rx=0, ry=0;
-document.addEventListener("mousemove", e => { mx=e.clientX; my=e.clientY; cursor.style.left=mx+"px"; cursor.style.top=my+"px"; });
-(function animRing(){rx+=(mx-rx)*.12; ry+=(my-ry)*.12; ring.style.left=rx+"px"; ring.style.top=ry+"px"; requestAnimationFrame(animRing);})();
-
 // ── Nav scroll ─────────────────────────────────────────
 const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 60), {passive:true});
