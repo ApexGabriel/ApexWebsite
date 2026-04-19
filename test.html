@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <div class="hero-title" data-content="hero.title"></div>
+    <div class="hero-eyebrow" data-content="hero.eyebrow"></div>
+
+    <script>
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, key) => current && current[key], obj);
+        }
+
+        function loadContent() {
+            console.log('Loading content...');
+            fetch('./content.json')
+                .then(response => {
+                    console.log('Response:', response.status);
+                    return response.text();
+                })
+                .then(text => {
+                    console.log('Got text:', text.substring(0, 100));
+                    const content = JSON.parse(text);
+                    console.log('Parsed content');
+
+                    document.querySelectorAll('[data-content]').forEach(el => {
+                        const path = el.dataset.content;
+                        const value = getNestedValue(content, path);
+                        console.log('Setting', path, 'to', value);
+                        if (value) {
+                            el.innerHTML = value;
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadContent);
+        setTimeout(loadContent, 100);
+    </script>
+</body>
+</html>

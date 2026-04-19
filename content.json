@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "eyebrow": "UE5 Lighting · Technical Art · Pipeline Development",
+    "title": "APEX<br/><span>SHADOW</span><br/>WORKS",
+    "subtitle": "LIGHTING & TECHNICAL ART CONSULTING",
+    "body": "Specialized consulting for indie and AA studios building real-time worlds in Unreal Engine 5. From lighting pipelines and Lumen integration to stylized PBR workflows. Refining the technical artistry behind the next generation of UE5 titles."
+  },
+  "services": {
+    "label": "Capabilities",
+    "title": "What We Bring<br/>to Your Production",
+    "body": "Embedded consultancy that aligns artistic vision with technical execution. Delivering hands-on pipeline development tailored to the specific needs of your project.",
+    "items": [
+      {
+        "name": "UE5 Lighting Pipelines",
+        "desc": "Full lighting system design and implementation using Lumen global illumination, Nanite geometry, and HDRI sky systems. Built for your art direction, optimized for your target platform.",
+        "tags": ["Lumen GI", "Sky Atmosphere", "Volumetrics", "HDRI"]
+      },
+      {
+        "name": "Real-Time Rendering & Color",
+        "desc": "Implementation of unified scene color and post-process pipelines. Ensuring visual consistency across all platforms by tailoring output for both HDR displays and mobile targets.",
+        "tags": ["Color Grading", "Post-Process", "HDR", "Tone Mapping"]
+      },
+      {
+        "name": "Stylized PBR Art Pipelines",
+        "desc": "Physically-based workflows tuned for stylized results. Creating natural environments, foliage, and terrain that elevate your art direction under any real-time lighting setup.",
+        "tags": ["PBR Materials", "Foliage", "Terrain", "Stylized"]
+      },
+      {
+        "name": "Blueprint & Tool Development",
+        "desc": "Custom Blueprint scripting and editor tooling to accelerate production. Designing lighting control systems, procedural placement tools, and pipeline automation tailored to your team’s specific workflow.",
+        "tags": ["Blueprint", "Editor Tools", "Automation", "Pipeline"]
+      }
+    ]
+  }
+}
