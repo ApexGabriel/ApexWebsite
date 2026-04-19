@@ -679,7 +679,7 @@ footer{
         </p>
         <div class="contact-detail">
           <span class="cd-label">Email</span>
-          <span class="cd-val"><a href="mailto:gabriel@apexshadowworks.com">gabriel@apexshadowworks.com</a></span>
+          <span class="cd-val"><a href="mailto:contact@apexshadowworks.com">contact@apexshadowworks.com</a></span>
         </div>
         <div class="contact-detail">
           <span class="cd-label">Based</span>
@@ -788,7 +788,7 @@ function handleSubmit(e) {
   const body = encodeURIComponent(
     `Studio: ${data.get("studio")}\nName: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`
   );
-  window.location.href = `mailto:gabriel@apexshadowworks.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:contact@apexshadowworks.com?subject=${subject}&body=${body}`;
 
   setTimeout(() => {
     btn.textContent = "Send Message"; btn.disabled = false;
