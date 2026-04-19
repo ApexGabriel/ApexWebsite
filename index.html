@@ -774,27 +774,35 @@ document.querySelectorAll(".reveal").forEach((el,i) => {
 });
 
 // ── Form ───────────────────────────────────────────────
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById("submit-btn");
   const status = document.getElementById("form-status");
-  const form = document.getElementById("contact-form");
+  const form = e.target;
   const data = new FormData(form);
 
-  btn.textContent = "Sending..."; btn.disabled = true;
+  btn.textContent = "Sending...";
+  btn.disabled = true;
 
-  // mailto fallback — opens their email client with pre-filled message
-  const subject = encodeURIComponent(`Studio Inquiry from ${data.get("studio")}`);
-  const body = encodeURIComponent(
-    `Studio: ${data.get("studio")}\nName: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`
-  );
-  window.location.href = `mailto:contact@apexshadowworks.com?subject=${subject}&body=${body}`;
+  // Replace with your actual Google Script Web App URL
+  const scriptURL = "https://script.google.com/macros/s/XXXXX/exec";
 
-  setTimeout(() => {
-    btn.textContent = "Send Message"; btn.disabled = false;
-    status.textContent = "Opening your email client...";
-    setTimeout(() => status.textContent = "", 4000);
-  }, 1000);
+  try {
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      body: data
+    });
+
+    if (response.ok) {
+      status.textContent = "Message sent. Talk soon!";
+      form.reset();
+    }
+  } catch (error) {
+    status.textContent = "Error sending message. Please try again.";
+  } finally {
+    btn.textContent = "Send Message";
+    btn.disabled = false;
+  }
 }
 
 // ── Smooth scroll for anchor links ────────────────────
